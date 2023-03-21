@@ -1,5 +1,3 @@
-
-
 class LoginPage {
 
     constructor() {
@@ -12,7 +10,6 @@ class LoginPage {
         cy.get('input[placeholder$=email]').as('email')
         cy.get('input[placeholder*=senha]').as('password')
 
-
         if (email) {
             cy.get('@email').type(email)
         }
@@ -21,8 +18,8 @@ class LoginPage {
             cy.get('@password').type(password)
         }
 
-        ////button[text()="Entrar"]
-        cy.contains('button', 'Entrar').click()
+        cy.contains('button', 'Entrar')
+            .click()
     }
 
     noticeShouldBe(message) {
@@ -44,9 +41,9 @@ class LoginPage {
             .and(($small) => {
                 expect($small.get(0).textContent).to.equal(emailMessage)
                 expect($small.get(1).textContent).to.equal(passwordMessage)
-
             })
     }
+
 }
 
 export default new LoginPage()

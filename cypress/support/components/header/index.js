@@ -1,7 +1,7 @@
 
 
 class Header {
-    userShouldBeloggedIn(name) {
+    userShouldBeLoggedIn(name) {
         cy.get('.logged-user div a ')
             .should('be.visible')
             .should('have.text', 'Olá, ' + name)
